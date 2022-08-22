@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { connect } from 'react-redux'; 
+import HienNote from './component/HienNode';
+import TaoNote from './component/TaoNode';
+import { BrowserRouter, Router, Route } from 'react-router-dom'
+function App(props) {
+  return( 
+    <BrowserRouter>
+    <div className="container">
+          <div className="row">
+            <div className="col-12 bg-dark mb-2">
+              <h1 style={{textAlign: 'center', color: 'white'}}>Timestamped Notes App</h1>
+              <TaoNote />
+              <div>
+              {props.note.map((n) => { // Render các ghi chú.
+                  return <HienNote noteData = {n} key={n.id}/>
+              })}
+              
+              </div>                          
+            </div>
+          </div>     
     </div>
-  );
+    </BrowserRouter>
+  )
+  
 }
+const mapStateToProps = (state, ownProps) => {  
+  //console.log("Toàn bộ state " , state);
+  return {  
+    note: state.note,
 
-export default App;
+  }; 
+};
+export default connect(mapStateToProps, null)(App);

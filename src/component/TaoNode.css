@@ -1,0 +1,17 @@
+.form-control{
+    max-width:  50%;
+    margin: 20px;
+   
+}
+input{
+    text-align: left;
+}
+.input-group{
+    position: relative;
+    left:250px
+}
+.btn-primary{
+    position: relative;
+    left:470px;
+   
+}

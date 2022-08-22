@@ -1,0 +1,14 @@
+textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+}
+textarea:focus{
+    outline: none;
+    
+}
+.card-footer{
+    padding: 10px 10px;
+}

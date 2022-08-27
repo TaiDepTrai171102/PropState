@@ -18,15 +18,17 @@ function TaoNote(props) {
   return (
     <div className="col-md-12">
       <div className="input-group mb-8">
+        <label style={{color: "white"}}>Nội dung </label>
         <input type="text"  className="form-control"
-          placeholder="Note Title"  value =  {content}
+          placeholder="Nội dung"  value =  {content}
           onChange={(e) => { setContent(e.target.value) }}  
           ref={noteInput} 
         />
       </div>
       <div className="input-group mb-8">
+        <label style={{color: "white"}}>Ngày nhận</label>
         <input type="text"  className="form-control"
-          placeholder="Note Details"  value =  {title}
+          placeholder="Ngày nhận"  value =  {title}
           onChange={(e) => { setTitle(e.target.value) }}  
           ref={noteInput} 
         />
@@ -50,7 +52,7 @@ const mapDispatch = (dispatch) => {
       dispatch(actAddNote(content));
     },
     addTitle: (title) =>{
-      dispatch(actDetailNote(title))
+      dispatch(actAddNote(title))
     }
   
   };

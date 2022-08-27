@@ -17,12 +17,7 @@ const noteReducer = (state = [] , action ) =>{
             })
             console.log("Xóa node:", state);
             return state;
-        case DETAIL_NOTE:
-            const indexNotea = state.map((e) => e.id === e.title )
-            if (indexNotea )
-            state[indexNotea].title = action.title;
-            console.log("Chi tiết note : ", state);   
-            return state
+       
         default:
             return state;
     }

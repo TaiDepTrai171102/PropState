@@ -8,6 +8,3 @@ export const actRemoveNote = (id) => {
   return {type: REMOVE_NOTE, id,};
 };
 // action chi tiết note
-export const actDetailNote = (id,title) =>{
-  return { type: DETAIL_NOTE , id , title ,};
-}

@@ -12,24 +12,17 @@ function HienNote(props) {
 
 
   const hamXoaGhiChu = () => { props.removeNote(noteID) }
-  return (    
-      <div className="mt-2 card bg-warning">
-        <div className="card-body" style={{ height: 50 }}>
-          <textarea value= {noteContent} ></textarea>
-          
-        </div>
-        <div className="card-footer p-1">
-
-
-          <button style={{ position: "relative", left: -140 , top:-45  }} className="btn btn-primary btn-sm float-right"
-          onClick={hamGanNoiDungTitle}>(Show Details)</button>
-          <button className="btn btn-danger btn-sm float-right" onClick={hamXoaGhiChu} 
-          style={{ position: "relative", right: -100 , top:-45 }}>(Remove Note)</button>
-
-          
-          
-        </div>
+  return (
+      <>    
+      <div className="card-content">
+          <h3 style={{color:"white"}}>{noteContent}</h3> 
       </div>
+
+      <div className="card-title">
+          <h3 style={{color:"white"}}>{noteDetail}</h3> 
+      </div>
+
+      </>
   );
 }
  
@@ -38,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     
     removeNote: id => {  dispatch(actRemoveNote(id)); },
-    detailNote: (id,title) => {dispatch(actDetailNote(id , title));},
+
   };
 };
 // chuyển state từ store thành props của component
@@ -46,3 +39,18 @@ const mapState = (state, ownProps) => {
   return { note: state.note,};
 };
 export default connect(mapState, mapDispatchToProps)(HienNote);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   <button style={{ position: "relative", left: -140 , top:-45  }} className="btn btn-primary btn-sm float-right"
+// onClick={hamGanNoiDungTitle}>(Show Details)</button>
